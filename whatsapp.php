@@ -69,17 +69,12 @@ add_action( 'admin_notices', 'display_banner_notice' );
 
 function check_for_plugin_update()
  {
-    $plugin_data = get_plugin_data( __FILE__ );
-    $current_version = 	$plugin_data['Version'];
-    $remote_path = 'https://raw.githubusercontent.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin/main/whatsapp.php';
-    $plugin_slug = plugin_basename( __FILE__ );
-    $plugin_data = get_plugin_data( __FILE__, false, false );
-    $remote_version = $plugin_data['Version'];
-    if ( version_compare( $current_version, $remote_version, '<' ) ) {
-        echo '<div class="update-message notice notice-warning notice-alt">';
-        echo '<p>A new version of the <strong>' . $plugin_data['Name'] . '</strong> plugin is available. <a href="update.php?action=upgrade-plugin&plugin=' . $plugin_slug . '">Update now</a>.</p>';
-        echo '</div>';
-    }
+    require_once('PDUpdater.php');
+    $updater = new PDUpdater(__FILE__);
+    $updater->set_username('username-here');
+    $updater->set_repository('repository-name-here');
+    $updater->authorize(get_option('my_licence_key'));
+    $updater->initialize();
 }
 add_action( 'admin_notices', 'check_for_plugin_update' );
 

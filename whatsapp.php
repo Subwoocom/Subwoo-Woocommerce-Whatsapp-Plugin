@@ -67,8 +67,10 @@ function display_banner_notice(){
 }
 add_action( 'admin_notices', 'display_banner_notice' );
 
-function check_for_plugin_update() {
-    $current_version = '1.1';
+function check_for_plugin_update()
+ {
+    $plugin_data = get_plugin_data( __FILE__ );
+    $current_version = 	$plugin_data['Version'];
     $remote_path = 'https://raw.githubusercontent.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin/main/whatsapp.php';
     $plugin_slug = plugin_basename( __FILE__ );
     $plugin_data = get_plugin_data( __FILE__, false, false );

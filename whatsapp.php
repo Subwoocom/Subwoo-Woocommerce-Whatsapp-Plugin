@@ -69,7 +69,7 @@ add_action( 'admin_notices', 'display_banner_notice' );
 
 function check_for_plugin_update() {
     $current_version = '1.1';
-    $remote_path = 'https://raw.githubusercontent.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin/master/subwoo-whatsapp-paketi.php';
+    $remote_path = 'https://raw.githubusercontent.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin/main/whatsapp.php';
     $plugin_slug = plugin_basename( __FILE__ );
     $plugin_data = get_plugin_data( __FILE__, false, false );
     $remote_version = $plugin_data['Version'];

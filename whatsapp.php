@@ -70,11 +70,7 @@ add_action( 'admin_notices', 'display_banner_notice' );
 function check_for_plugin_update()
  {
     require_once('PDUpdater.php');
-    $updater = new PDUpdater(__FILE__);
-    $updater->set_username('Subwoocom');
-    $updater->set_repository('Subwoo-Woocommerce-Whatsapp-Plugin');
-    //$updater->authorize(get_option('my_licence_key'));
-    $updater->initialize();
+   
 }
 add_action( 'admin_notices', 'check_for_plugin_update' );
 

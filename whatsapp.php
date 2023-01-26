@@ -3,7 +3,7 @@
  * Plugin Name:       Subwoo Whatsapp Paketi
  * Plugin URI:        https://subwoo.com
  * Description:       Subwoo sizlere müşterilerinize ulaşabileceğiniz whatsapp hizmeti sunar.
- * Version:           1.4
+ * Version:           1.5
  * Requires at least: 5.6
  * Requires PHP:      5.6
  * Author:            Subwoo
@@ -51,7 +51,7 @@ function whatsapp_send_message($order){
 function display_banner_notice(){
     $banner_img_url = plugin_dir_url( __FILE__ ) . 'subwoo-plugins.png';
     echo '<div class="notice notice-info is-dismissible" id="banner-notice">';
-    echo '<img src="' . $banner_img_url . '" alt="Reklam Banneri">';
+    echo '<img src="' . $banner_img_url . '" alt="Reklam Bannerii">';
     echo '</div>';
     echo '<style>
         #banner-notice {

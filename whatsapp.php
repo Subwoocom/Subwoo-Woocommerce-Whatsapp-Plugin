@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name:       Subwoo Whatsapp Paketi
- * Plugin URI:        https://github.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin
+ * Plugin URI:        https://subwoo.com
  * Description:       Subwoo sizlere müşterilerinize ulaşabileceğiniz whatsapp hizmeti sunar.
- * Version:           1.1
+ * Version:           1.2
  * Requires at least: 5.6
  * Requires PHP:      5.6
  * Author:            Subwoo
@@ -11,7 +11,7 @@
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        https://github.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin
- * Text Domain:       https://subwoo.com
+ * Text Domain:       whatsapp
  */
 defined('ABSPATH') or die('Wrong way dude');
 
@@ -55,7 +55,7 @@ function display_banner_notice(){
     echo '</div>';
     echo '<style>
         #banner-notice {
-            background-color: red;
+            background-color: #377dff;
             padding: 1em;
             text-align: center;
         }
@@ -66,3 +66,19 @@ function display_banner_notice(){
     </style>';
 }
 add_action( 'admin_notices', 'display_banner_notice' );
+
+function check_for_plugin_update() {
+    $current_version = '1.1';
+    $remote_path = 'https://raw.githubusercontent.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin/master/subwoo-whatsapp-paketi.php';
+    $plugin_slug = plugin_basename( __FILE__ );
+    $plugin_data = get_plugin_data( __FILE__, false, false );
+    $remote_version = $plugin_data['Version'];
+    if ( version_compare( $current_version, $remote_version, '<' ) ) {
+        echo '<div class="update-message notice notice-warning notice-alt">';
+        echo '<p>A new version of the <strong>' . $plugin_data['Name'] . '</strong> plugin is available. <a href="update.php?action=upgrade-plugin&plugin=' . $plugin_slug . '">Update now</a>.</p>';
+        echo '</div>';
+    }
+}
+add_action( 'admin_notices', 'check_for_plugin_update' );
+
+

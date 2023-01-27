@@ -8,10 +8,9 @@
  * Requires PHP:      5.6
  * Author:            Subwoo
  * Author URI:        https://subwoo.com/
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPLv3 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Update URI:        https://github.com/Subwoocom/Subwoo-Woocommerce-Whatsapp-Plugin
- * Text Domain:       whatsapp
  */
 defined('ABSPATH') or die('Wrong way dude');
 
@@ -66,12 +65,5 @@ function display_banner_notice(){
     </style>';
 }
 add_action( 'admin_notices', 'display_banner_notice' );
-
-function check_for_plugin_update()
- {
-    require_once('PDUpdater.php');
-   
-}
-add_action( 'admin_notices', 'check_for_plugin_update' );
 
 

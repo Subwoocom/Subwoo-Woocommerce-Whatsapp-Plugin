@@ -41,7 +41,7 @@ function whatsapp_send_message($order){
     }
     else{$phone =  '9'.$phone;}
     ?>
-    Mesaj Gönderilecek Numara Gönderim Ardersinden Çekilmektedir.
+    Mesaj Gönderilecek Numara Gönderim Adresinden Çekilmektedir.
     <a target="_blank" href="https://wa.me/<?php echo $phone ?>" class="button" style="background-color: green;color: white; margin-top: 10px"> Mesaj Gönder</a>
     <?php
 }

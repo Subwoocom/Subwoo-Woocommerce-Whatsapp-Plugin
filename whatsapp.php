@@ -56,10 +56,10 @@ function display_banner_notice(){
     echo '</div>';
     echo '<style>
         #banner-notice {
-            background-color: #377dff;
+            background-color: #f2f3f5;
             
             text-align: center;
-	    height:100px;
+			height:100px;
         }
         #banner-notice img {
             width: 100%;

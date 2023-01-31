@@ -48,7 +48,7 @@ function whatsapp_send_message($order){
 
 
 function display_banner_notice(){
-    $banner_img_url = plugin_dir_url( __FILE__ ) . 'banner.png';
+    $banner_img_url = plugin_dir_url( __FILE__ ) . 'subwoo-ads.jpg';
     echo '<div class="notice notice-info is-dismissible" id="banner-notice">';
  	echo '<a href="https://subwoo.com">';
     echo '<img src="'.$banner_img_url.'" alt="subwoo banner">';
@@ -56,8 +56,7 @@ function display_banner_notice(){
     echo '</div>';
     echo '<style>
         #banner-notice {
-            background-color: #377dff;
-            padding: 1em;
+            background-color: #f2f3f5;
             text-align: center;
 			height:100px;
         }

@@ -63,7 +63,6 @@ function display_banner_notice(){
         }
         #banner-notice img {
             width: 100%;
-			objecti
             
         }
     </style>';

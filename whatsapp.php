@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name:       WooWhatsapp Entegrasyonu
+ * Plugin Name:       Message to Customer WP
  * Plugin URI:        https://subwoo.com
- * Description:       Subwoo sizlere müşterilerinize ulaşabileceğiniz whatsapp hizmeti sunar.
+ * Description:       Subwoo sizlere müşterilerinize ulaşabileceğiniz "whatsapp" hizmeti sunar.
  * Version:           1.0
  * Requires at least: 5.6
  * Requires PHP:      5.6
@@ -34,7 +34,7 @@ function whatsapp_send_message($order){
     $phone = $address['phone'];
 
     if(empty($phone)){
-        echo "Numara bulunamadı";
+        echo "Numara bulunamadı.";
     }
     else {
         $firsr_char = $phone[0];

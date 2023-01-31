@@ -50,20 +50,28 @@ function whatsapp_send_message($order){
 function display_banner_notice(){
     $banner_img_url = plugin_dir_url( __FILE__ ) . 'subwoo.jpg';
     echo '<div class="notice notice-info is-dismissible" id="banner-notice">';
-    echo '<iframe src="https://www.subwoo.com/plugins/" title="subwoo plugins"></iframe>';
+ echo '<a href="https://your-desired-url.com">';
+	
+    echo '<img src="'.$banner_img_url.'" alt="subwoo banner">';
+	echo '</a>';
     echo '</div>';
+    
+
     echo '<style>
         #banner-notice {
             background-color: #377dff;
             padding: 1em;
             text-align: center;
+			height:100px;
         }
         #banner-notice img {
-            max-width: 100%;
+            width: 100%;
             height: 100px;
         }
     </style>';
 }
 add_action( 'admin_notices', 'display_banner_notice' );
+
+
 
 

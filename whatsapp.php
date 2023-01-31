@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Subwoo Woocommerce Whatsapp Entegrasyonu
+ * Plugin Name:       WooWhatsapp Entegrasyonu
  * Plugin URI:        https://subwoo.com
  * Description:       Subwoo sizlere müşterilerinize ulaşabileceğiniz whatsapp hizmeti sunar.
  * Version:           1.0
@@ -26,7 +26,6 @@ function KRGTKP_add_metabox(){
     );
 }
 add_action("add_meta_boxes","KRGTKP_add_metabox");
-
 function whatsapp_send_message($order){
     $order = $order->ID;
     $order =  wc_get_order($order); // Order id
@@ -34,17 +33,25 @@ function whatsapp_send_message($order){
     $address = $order->get_address('billing');
     $phone = $address['phone'];
 
-    $firsr_char = $phone[0];
-
-    if($firsr_char == '9'){
-        $phone = $phone;
+    if(empty($phone)){
+        echo "Numara bulunamadı";
     }
-    else{$phone =  '9'.$phone;}
-    ?>
-    Mesaj Gönderilecek Numara Gönderim Adresinden Çekilmektedir.
-    <a target="_blank" href="https://wa.me/<?php echo $phone ?>" class="button" style="background-color: green;color: white; margin-top: 10px"> Mesaj Gönder</a>
-    <?php
+    else {
+        $firsr_char = $phone[0];
+
+        if($firsr_char == '9'){
+            $phone = $phone;
+        }
+        else{
+            $phone =  '9'.$phone;
+        }
+        ?>
+		Mesaj Gönderilecek Numara Gönderim Adresinden Çekilmektedir.
+        <a target="_blank" href="https://wa.me/<?php echo $phone ?>" class="button" style="background-color: green;color: white; margin-top: 10px">Mesaj Gönder</a>
+        <?php
+    }
 }
+
 
 
 function display_banner_notice(){
